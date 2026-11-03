@@ -88,7 +88,7 @@ export default function PokemonDetailScreen() {
     const isNowFavorite = updated.some((item) => item.id == pokemon.id);
     setFavorite(updated.some((item) => item.id === pokemon.id));
 
-    if (isNowFavorite){
+    if (isNowFavorite) {
       await notifyPokemonFavorited(pokemon.name);
     }
   }
@@ -126,6 +126,7 @@ export default function PokemonDetailScreen() {
 
 
   useEffect(() => {
+    console.log('Abrindo pokémon', id);
     const controller = new AbortController();
 
     async function loadPokemon() {
